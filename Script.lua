@@ -1,6 +1,6 @@
 -- RobloxScriptsOk protection
 local ProtectionConfig = {
-    SecretKey = "Test",
+    SecretKey = "1234",
     HubName = "RobloxScriptsOk"
 }
 
