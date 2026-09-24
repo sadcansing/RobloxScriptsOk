@@ -2,7 +2,7 @@ local Config = {
     ServiceId       = 32840,
     PlatoSecret     = "69453ed3-61cf-406c-a54b-6ee28f3afa65",
     Secret          = "1234",
-    MainScriptURL   = "https://raw.githubusercontent.com/sadcansing/RobloxScriptsOk/refs/heads/main/RobloxScriptsOk_Protected.lua",
+    MainScriptURL   = "https://raw.githubusercontent.com/sadcansing/RobloxScriptsOk/refs/heads/main/Script.lua",
 
     ShowDiscord     = false,
     DiscordURL      = "https://discord.gg/kT55J724BK",
