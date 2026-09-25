@@ -157,50 +157,30 @@ end
 -------------------------------------------------------------------------------
 
 local function StartMainScript()
-    local player = game:GetService("Players").LocalPlayer
-    local pGui = player:WaitForChild("PlayerGui")
-
-    print("[Loader] Starting main script...")
-
-    -- Set the secret before loading the script
     _G[Config.Secret] = true
 
-    print("[Loader] Secret set:", _G[Config.Secret])
-    print("[Loader] Downloading:", Config.MainScriptURL)
+    local source = game:HttpGet(Config.MainScriptURL)
 
-    local okDownload, source = pcall(function()
-        return game:HttpGet(Config.MainScriptURL)
-    end)
+    print("SOURCE LENGTH:", #source)
 
-    if not okDownload then
-        warn("[Loader] HTTP ERROR:", source)
-        return
+    local lines = {}
+    for line in source:gmatch("[^\r\n]+") do
+        lines[#lines + 1] = line
     end
 
-    if not source or #source == 0 then
-        warn("[Loader] Downloaded script is empty")
-        return
+    for i = 48, 56 do
+        print("LINE", i, ":", lines[i] or "<missing>")
     end
 
-    print("[Loader] Downloaded:", #source, "characters")
-
-    local fn, compileError = loadstring(source)
+    local fn, err = loadstring(source)
 
     if not fn then
-        warn("[Loader] COMPILE ERROR:", compileError)
+        warn("COMPILE FAILED:", err)
         return
     end
 
-    print("[Loader] Script compiled successfully")
-
-    local okRun, runtimeError = pcall(fn)
-
-    if not okRun then
-        warn("[Loader] RUNTIME ERROR:", runtimeError)
-        return
-    end
-
-    print("[Loader] Main script finished")
+    print("COMPILE SUCCESS")
+    fn()
 end
 
 local function CreateGUI()
