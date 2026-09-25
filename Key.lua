@@ -40,7 +40,7 @@ local Config = {
 
     -- [6] GUI Management
     OldGuiName      = "anything", -- Name of the old GUI to destroy if it's already open
-    MainGuiName     = "anything", -- Name of the main script's GUI to check if it's already executing
+    MainGuiName     = "LaRivals", -- Name of the main script's GUI to check if it's already executing
 
     -- [7] Hub Information & UI Text
     HubName         = "LaRivals Key System", -- The main title shown at the top of the GUI
