@@ -17,7 +17,7 @@
 local Config = {
     -- [1] PlatoBoost Settings
     ServiceId       = 32840, -- Your PlatoBoost Service ID
-    PlatoSecret     = "Token", -- Your PlatoBoost Secret Key
+    PlatoSecret     = "69453ed3-61cf-406c-a54b-6ee28f3afa65", -- Your PlatoBoost Secret Key
 
     -- [2] Anti-Bypass / Global Secret Variable
     Secret          = "2580", -- This makes the script ONLY run from the key script. Even if they copy the original obfuscated script to bypass the key, they won't be able to!
