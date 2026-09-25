@@ -159,7 +159,7 @@ end
 local function StartMainScript()
     _G[Config.Secret] = true
 
-    local source = game:HttpGet(ProtectionConfig.MainScriptURL)
+    local source = game:HttpGet(Config.MainScriptURL)
 
     print("SOURCE LENGTH:", #source)
 
